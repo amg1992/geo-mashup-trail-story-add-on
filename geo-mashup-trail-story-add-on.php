@@ -27,6 +27,20 @@ include_once('inc/cpt-itinerary.php');
 include_once('inc/cpt-trail-story.php');
 include_once('inc/cpt-trail-condition.php');
 
+register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
+
+/**
+* Flushing permalinks for CPTs
+*/
+register_activation_hook( __FILE__, 'trail_story_flush_rewrites' );
+
+function trail_story_flush_rewrites() {
+	register_cpt_itinerary();
+	register_cpt_trail_story();
+	register_cpt_trail_condition();
+	flush_rewrite_rules();
+}
+
 /**
 * Register and enqueue jQuery files to run on frontend, enqueue on admin_init
 */
@@ -58,6 +72,7 @@ function require_geo_mashup() {
 function geo_mashup_add_on_plugin_notice() {
 	echo '<div class="error"><p><strong>GEO Mashup</strong> must be installed and activated to use this plugin!</p></div>';
 }
+
 
 
 /**

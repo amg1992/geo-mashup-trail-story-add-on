@@ -1,4 +1,21 @@
 <?php
+
+/**
+* Pending approval post status
+*/
+/**add_action( 'init', 'pending_approval_post_status' );
+
+function pending_approval_post_status(){
+    register_post_status( 'pending-approval', array(
+        'label'                     => _x( 'Pending Approval', 'post' ),
+        'public'                    => true,
+        'exclude_from_search'       => false,
+        'show_in_admin_all_list'    => true,
+        'show_in_admin_status_list' => true,
+        'label_count'               => _n_noop( 'Unread <span class="count">(%s)</span>', 'Unread <span class="count">(%s)</span>' ),
+    ) );
+}*/
+
 /*
 * Custom Post Type for Trail Story
 */
@@ -33,7 +50,7 @@ function register_cpt_trail_story() {
         'show_in_admin_bar' => true,
         'menu_position' => 5,
         'menu_icon' => 'dashicons-format-status',//'dashicons-controls-volumeon', //'dashicons-media-audio',
-        'has_archive' => true,
+        'has_archive' => false,
         'publicly_queryable' => true,
         'exclude_from_search' => false,
         'has_archive' => true,
@@ -87,3 +104,4 @@ function register_txn_trail_story() {
 
     register_taxonomy( 'trail-story-category', array('trail-story'), $args );
 }
+
