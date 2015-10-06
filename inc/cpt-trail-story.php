@@ -9,7 +9,7 @@ function register_cpt_trail_story() {
     $labels = array( 
         'name' => _x( 'Trail Story', 'trail-story' ),
         'singular_name' => _x( 'Trail Story', 'trail-story' ),
-        'add_new' => _x( 'Add New Trail Story', 'trail-Story' ),
+        'add_new' => _x( 'Add New', 'trail-Story' ),
         'add_new_item' => _x( 'Add New Trail Story', 'trail-story' ),
         'edit_item' => _x( 'Edit Trail Story', 'trail-story' ),
         'new_item' => _x( 'New Trail Story', 'trail-story' ),

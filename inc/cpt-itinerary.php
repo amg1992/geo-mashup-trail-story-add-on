@@ -14,11 +14,11 @@ function register_cpt_itinerary() {
         'edit_item' => _x( 'Edit Itinerary', 'itinerary' ),
         'new_item' => _x( 'New Itinerary', 'itinerary' ),
         'view_item' => _x( 'View Itinerary', 'itinerary' ),
-        'search_items' => _x( 'Search Itinerarys', 'itinerary' ),
-        'not_found' => _x( 'No Itinerarys found', 'itinerary' ),
-        'not_found_in_trash' => _x( 'No Itinerarys found in Trash', 'itinerary' ),
-        'parent_item_colon' => _x( 'Parent Itinerarys:', 'itinerary' ),
-        'menu_name' => _x( 'Itinerarys', 'itinerary' ),
+        'search_items' => _x( 'Search Itineraries', 'itinerary' ),
+        'not_found' => _x( 'No Itineraries found', 'itinerary' ),
+        'not_found_in_trash' => _x( 'No Itineraries found in Trash', 'itinerary' ),
+        'parent_item_colon' => _x( 'Parent Itineraries:', 'itinerary' ),
+        'menu_name' => _x( 'Itineraries', 'itinerary' ),
     );
 
     $args = array( 

@@ -33,15 +33,32 @@ class TrailStorySettings
             plugins_url('geo-mashup-trail-story-add-on/assets/icon-20x20.png'), 100
         );
 
-        //add_submenu_page(
-            //'edit.php?post_type=product',
-            //'Out of Stock Report',
-            //'Out of Stock Report',
-            //'manage_options',
-            //'outofstock-stats'//,
-            //array( $this, 'create_trail_story_menu_page' )
-        //);
+        add_submenu_page(
+            'edit.php?post_type=itinerary',
+            'Itineraries',
+            'Itineraries',
+            'manage_options',
+            'trail-itineraries'//,
+            array( $this, 'create_trail_story_menu_page' )
+        );
 
+        add_submenu_page(
+            'edit.php?post_type=trail-story',
+            'Trail Stories',
+            'Trail Stories',
+            'manage_options',
+            'trail-stories'//,
+            array( $this, 'create_trail_story_menu_page' )
+        );
+
+        add_submenu_page(
+            'edit.php?post_type=trail-condition',
+            'Trail Condition',
+            'Trail Condition',
+            'manage_options',
+            'trail-conditions'//,
+            array( $this, 'create_trail_story_menu_page' )
+        );
     }
 
     /**
