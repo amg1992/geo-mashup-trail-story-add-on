@@ -1,6 +1,6 @@
 <?php
 //Hey there guy.
-include_once('woo-settings-tab.php');
+//include_once('woo-settings-tab.php');
 include_once('class-trail-story-settings.php');
 
 
