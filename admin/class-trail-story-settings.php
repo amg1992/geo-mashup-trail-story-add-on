@@ -30,7 +30,7 @@ class TrailStorySettings
             'manage_options',
             'trail-story',
             array( $this, 'create_trail_story_menu_page' ),
-            plugins_url('geo-mashup-trail-story-add-on/assets/icons/icon-20x20.png'), 100
+            plugins_url('geo-mashup-trail-story-add-on/assets/icon-20x20.png'), 100
         );
 
         //add_submenu_page(
