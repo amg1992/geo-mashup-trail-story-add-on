@@ -21,7 +21,7 @@ function trail_story_post_form() {
          
                 <fieldset class="category">
                     <label for="cat"> <?php _e( 'Trail Story Chapter', 'geo-mashup-trail-story-add-on' ); ?> </label>
-                    <?php wp_dropdown_categories( 'tab_index=10&taxonomy=trail-story-category&hide_empty=0' ); ?>
+                    <?php wp_dropdown_categories( 'tab_index=10&taxonomy=trail-story-category&hide_empty=0&echo=1' ); ?>
                 </fieldset>
              
                 <fieldset class="content">
