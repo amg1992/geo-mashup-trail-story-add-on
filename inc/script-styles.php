@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 
 /**
 * Script styles to run jQuery on pages

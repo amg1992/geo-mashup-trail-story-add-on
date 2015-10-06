@@ -12,10 +12,8 @@
  * 
  * @package Geo Mashup Trail Stroy Add-On
  */
-// Exit if accessed directly
 
 defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
-//if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
 * Including files in other directories
@@ -26,6 +24,24 @@ include_once('inc/script-styles.php');
 include_once('inc/cpt-itinerary.php');
 include_once('inc/cpt-trail-story.php');
 include_once('inc/cpt-trail-condition.php');
+
+
+/**
+* Flushing permalinks for CPTs on DEACTIVATE
+*/
+register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
+
+/**
+* Flushing permalinks for CPTs ON ACTIVATE
+*/
+register_activation_hook( __FILE__, 'trail_story_flush_rewrites' );
+
+function trail_story_flush_rewrites() {
+	register_cpt_itinerary();
+	register_cpt_trail_story();
+	register_cpt_trail_condition();
+	flush_rewrite_rules();
+}
 
 /**
 * Register and enqueue jQuery files to run on frontend, enqueue on admin_init
@@ -55,6 +71,10 @@ function require_geo_mashup() {
         }
     }
 }
+
+/**
+* Admin notice for not having Geo Mashup plugin
+*/
 function geo_mashup_add_on_plugin_notice() {
 	echo '<div class="error"><p><strong>GEO Mashup</strong> must be installed and activated to use this plugin!</p></div>';
 }

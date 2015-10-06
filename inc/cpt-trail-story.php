@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
+
 /*
 * Custom Post Type for Trail Story
 */
@@ -33,7 +35,7 @@ function register_cpt_trail_story() {
         'show_in_admin_bar' => true,
         'menu_position' => 5,
         'menu_icon' => 'dashicons-format-status',//'dashicons-controls-volumeon', //'dashicons-media-audio',
-        'has_archive' => true,
+        'has_archive' => false,
         'publicly_queryable' => true,
         'exclude_from_search' => false,
         'has_archive' => true,
@@ -87,3 +89,4 @@ function register_txn_trail_story() {
 
     register_taxonomy( 'trail-story-category', array('trail-story'), $args );
 }
+
