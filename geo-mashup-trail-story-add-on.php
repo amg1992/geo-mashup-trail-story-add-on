@@ -36,7 +36,7 @@ register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
 */
 register_activation_hook( __FILE__, 'trail_story_flush_rewrites' );
 
-public static function trail_story_flush_rewrites() {
+function trail_story_flush_rewrites() {
 	register_cpt_itinerary();
 	register_cpt_trail_story();
 	register_cpt_trail_condition();
@@ -48,7 +48,7 @@ public static function trail_story_flush_rewrites() {
 */
 add_action( 'init', 'register_trail_story_scripts' );
 
-public static function register_trail_story_scripts() {
+function register_trail_story_scripts() {
 	wp_register_script( 'trailstory_js', plugins_url('inc/trail-story.js', __FILE__), array('jquery'));
 	wp_register_style( 'trailstory_css', plugins_url('inc/trail-story.css', __FILE__));
 	wp_enqueue_script( 'trailstory_js' );
@@ -60,7 +60,7 @@ public static function register_trail_story_scripts() {
 */ 
 add_action( 'admin_init', 'require_geo_mashup' );
 
-public static function require_geo_mashup() {
+function require_geo_mashup() {
     if ( is_admin() && current_user_can( 'activate_plugins' ) &&  !is_plugin_active( 'geo-mashup/geo-mashup.php' ) ) {
         add_action( 'admin_notices', 'geo_mashup_add_on_plugin_notice' );
 
@@ -75,7 +75,7 @@ public static function require_geo_mashup() {
 /**
 * Admin notice for not having Geo Mashup plugin
 */
-public static function geo_mashup_add_on_plugin_notice() {
+function geo_mashup_add_on_plugin_notice() {
 	echo '<div class="error"><p><strong>GEO Mashup</strong> must be installed and activated to use this plugin!</p></div>';
 }
 
@@ -85,7 +85,7 @@ public static function geo_mashup_add_on_plugin_notice() {
 */
 add_filter( 'plugin_action_links', 'trail_story_settings_link', 10, 5 );
 
-public static function trail_story_settings_link( $actions, $plugin_file )
+function trail_story_settings_link( $actions, $plugin_file )
 {
 	static $plugin;
 

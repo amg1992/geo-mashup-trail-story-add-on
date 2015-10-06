@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 */
 add_action( 'init', 'register_cpt_trail_condition' );
 
-public static function register_cpt_trail_condition() {
+function register_cpt_trail_condition() {
 
     $labels = array( 
         'name' => _x( 'Trail Condition', 'trail-condition' ),
@@ -54,7 +54,7 @@ public static function register_cpt_trail_condition() {
 */
 add_action( 'init', 'register_txn_trail_conditions' );
 
-public static function register_txn_trail_conditions() {
+function register_txn_trail_conditions() {
 
     $labels = array( 
         'name' => _x( 'Trail Condition Category', 'trail-conditions' ),

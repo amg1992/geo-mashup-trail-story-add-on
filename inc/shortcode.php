@@ -2,7 +2,7 @@
 //Hey there guy.
 defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 
-public static function trail_story_shortcode( $attributes ) {
+function trail_story_shortcode( $attributes ) {
     $attr = shortcode_atts( array(
         'foo' => 'something',
         'bar' => 'something else',
