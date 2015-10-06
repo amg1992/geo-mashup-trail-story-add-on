@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 
-public interface iTrailStorySettings {
+interface iTrailStorySettings {
     public function __construct();
     public function add_trail_story_menu_page();
     public function create_trail_story_menu_page();
@@ -17,7 +17,7 @@ public interface iTrailStorySettings {
 /**
 * PLUGIN SETTINGS PAGE
 */
-public class TrailStorySettings implements iTrailStorySettings
+class TrailStorySettings implements iTrailStorySettings
 {
     /**
      * Holds the values to be used in the fields callbacks
