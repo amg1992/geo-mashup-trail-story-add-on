@@ -23,6 +23,9 @@ defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 include_once('admin/admin.php');
 include_once('inc/shortcode.php');
 include_once('inc/script-styles.php');
+include_once('inc/cpt-itinerary.php');
+include_once('inc/cpt-trail-story.php');
+include_once('inc/cpt-trail-condition.php');
 
 /**
 * Register and enqueue jQuery files to run on frontend, enqueue on admin_init
