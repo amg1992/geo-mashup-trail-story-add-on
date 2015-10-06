@@ -39,6 +39,26 @@ function register_trail_story_scripts() {
 	wp_enqueue_style( 'trailstory_css' );
 }
 
+/**
+* Require GEO Mashup
+*/ 
+add_action( 'admin_init', 'require_geo_mashup' );
+
+function require_geo_mashup() {
+    if ( is_admin() && current_user_can( 'activate_plugins' ) &&  !is_plugin_active( 'geo-mashup/geo-mashup.php' ) ) {
+        add_action( 'admin_notices', 'geo_mashup_add_on_plugin_notice' );
+
+        deactivate_plugins( plugin_basename( __FILE__ ) );
+
+        if ( isset( $_GET['activate'] ) ) {
+            unset( $_GET['activate'] );
+        }
+    }
+}
+function geo_mashup_add_on_plugin_notice() {
+	echo '<div class="error"><p><strong>GEO Mashup</strong> must be installed and activated to use this plugin!</p></div>';
+}
+
 
 /**
 * Adding Settings link to plugin page
