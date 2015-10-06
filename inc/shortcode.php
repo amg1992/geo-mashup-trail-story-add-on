@@ -21,7 +21,7 @@ function frontend_trail_story_map( $attributes ) {
         'bar' => 'something else',
     ), $attributes );
 
-    return "Trail Story shortcode";
+    return "Frontend Trail Story shortcode";
 }
 
 
