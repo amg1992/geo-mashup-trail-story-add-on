@@ -73,6 +73,10 @@ function require_geo_mashup() {
         }
     }
 }
+
+/**
+* Admin notice for not having Geo Mashup plugin
+*/
 function geo_mashup_add_on_plugin_notice() {
 	echo '<div class="error"><p><strong>GEO Mashup</strong> must be installed and activated to use this plugin!</p></div>';
 }
