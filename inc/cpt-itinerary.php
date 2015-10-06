@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 */
 add_action( 'init', 'register_cpt_itinerary' );
 
-function register_cpt_itinerary() {
+public static function register_cpt_itinerary() {
 
     $labels = array( 
         'name' => _x( 'Itinerary', 'itinerary' ),
@@ -53,7 +53,7 @@ function register_cpt_itinerary() {
 */
 add_action( 'init', 'register_txn_itinerary' );
 
-function register_txn_itinerary() {
+public static function register_txn_itinerary() {
 
     $labels = array( 
         'name' => _x( 'Itinerary Category', 'intineraries' ),
