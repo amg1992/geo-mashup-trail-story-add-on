@@ -10,7 +10,7 @@
  * Domain Path: /languages/
  * License: GPL2
  * 
- * @package Geo Mashup Assistant
+ * @package Geo Mashup Trail Stroy Add-On
  */
 // Exit if accessed directly
 
@@ -74,8 +74,8 @@ function trail_story_settings_link( $actions, $plugin_file )
 
 		if ($plugin == $plugin_file) {
 
-			$settings = array('settings' => '<a href="admin.php?page=wc-settings&tab=products&section=outofstock">' . __('Settings', 'General') . '</a>',
-							  'reports' => '<a href="edit.php?post_type=product&page=outofstock-stats">' . __('Reports', 'General') . '</a>');
+			$settings = array('settings' => '<a href="admin.php?page=trail-story">' . __('Settings', 'General') . '</a>' );//,
+							  //'reports' => '<a href="edit.php?post_type=product&page=outofstock-stats">' . __('Reports', 'General') . '</a>');
 
     			$actions = array_merge($settings, $actions);
 		}
