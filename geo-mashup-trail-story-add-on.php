@@ -27,10 +27,14 @@ include_once('inc/cpt-itinerary.php');
 include_once('inc/cpt-trail-story.php');
 include_once('inc/cpt-trail-condition.php');
 
+
+/**
+* Flushing permalinks for CPTs on DEACTIVATE
+*/
 register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
 
 /**
-* Flushing permalinks for CPTs
+* Flushing permalinks for CPTs ON ACTIVATE
 */
 register_activation_hook( __FILE__, 'trail_story_flush_rewrites' );
 
