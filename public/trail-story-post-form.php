@@ -25,7 +25,7 @@ function trail_story_post_form() {
                 </fieldset>
              
                 <fieldset class="content">
-                    <label for="description">Description and Notes:</label>
+                    <label for="description">Description</label>
                     <textarea id="description" tabindex="15" name="description" cols="80" rows="10"></textarea>
                 </fieldset>
              
@@ -33,13 +33,15 @@ function trail_story_post_form() {
                     <label for="post_tags">Additional Keywords (comma separated):</label>
                     input type="text" value="" tabindex="35" name="post_tags" id="post_tags" />
                 </fieldset>-->
+
+                <?php GeoMashupUserUIManager::get_instance()->print_form(); ?>
              
                 <fieldset class="submit">
-                    <input type="submit" value="Post Review" tabindex="40" id="submit" name="submit" />
+                    <input type="submit" value="Post Story" tabindex="40" id="submit" name="submit" />
                 </fieldset>
              
                 <input type="hidden" name="action" value="new_post" />
-                wp_nonce_field( 'new-post' );
+                <?php wp_nonce_field( 'new-post' ); ?>
 
             </form>
 
