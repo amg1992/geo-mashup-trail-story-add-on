@@ -19,6 +19,7 @@ defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 * Including files in other directories
 */
 include_once('admin/admin.php');
+include_once('public/public.php');
 include_once('inc/shortcode.php');
 include_once('inc/script-styles.php');
 include_once('inc/cpt-itinerary.php');

@@ -16,13 +16,13 @@ function trail_story_post_form() {
             '<form id="new_post" name="new_post" method="post" action="" class="trail-story-form" enctype="multipart/form-data">' .
          
                 '<fieldset name="name">' .
-                    '<label for="title">Wine Name:</label>' .
+                    '<label for="title"> ' . _e( 'Trail Story Title', 'geo-mashup-trail-story-add-on' ) . '</label>' .
                     '<input type="text" id="title" value="" tabindex="5" name="title" />' .
                 '</fieldset>' .
          
                 '<fieldset class="category">' .
-                    '<label for="cat">Type:</label>' .
-                    wp_dropdown_categories( 'tab_index=10&taxonomy=category&hide_empty=0' ) .
+                    '<label for="cat"> ' . _e( 'Trail Story Title', 'geo-mashup-trail-story-add-on' ) . '</label>' .
+                    wp_dropdown_categories( 'tab_index=10&taxonomy=trail-story-category&hide_empty=0' ) .
                 '</fieldset>' .
              
                 '<fieldset class="content">' .
