@@ -82,7 +82,7 @@ class TrailStorySettings
             <?php
                 // This prints out all hidden setting fields
                 settings_fields( 'trail_story_options_group' );
-                do_settings_sections( 'trail-story-setting-admin' );
+                do_settings_sections( 'trail-story-options-admin' );
                 submit_button('Save Options');
             ?>
             </form>
