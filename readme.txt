@@ -1,5 +1,5 @@
 === Geo Mashup Assistant ===
-Contributors: amg26, ryanvaness, jvalcq
+Contributors: amg26, ryanvaness, jvalcq, Orion Group LLC
 Tags: geo mashup, geo maps, maps, geo, trail story, geo map add-on
 Donate link: andrewmgunn.com/donate
 Tested up to: 4.3.1
