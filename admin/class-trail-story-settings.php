@@ -133,7 +133,7 @@ class TrailStorySettings
         add_settings_section(
             'trail_story_options_section', // ID
             'Options Section', // Title
-            array( $this, 'print_section_info' ), // Callback
+            array( $this, 'print_option_info' ), // Callback
             'trail-story-options-admin' // Page
         );
 
@@ -182,6 +182,15 @@ class TrailStorySettings
     /**
      * Print the Section text
      */
+    public function print_option_info()
+    {
+        print '<br/><p style="font-size:14px; margin:0 25% 0 0;"><strong>Developed at <a href="http://orionweb.net" target="_blank">Orion Group</a> LLC by '.
+         '<a href="http://andrewmgunn.com" target="_blank">Andrew Gunn</a>, Ryan Van Ess, Jon Valcq, and Josh Selk</strong>';
+    }
+
+    /**
+     * Print the Section text
+     */
     public function print_section_info()
     {
         //print '<br/><p style="font-size:14px; margin:0 25% 0 0;"><strong>Options coming soon!</strong>';
@@ -193,7 +202,7 @@ class TrailStorySettings
     public function trail_story_option_callback()
     {
         //Get plugin options
-        $options = get_option( 'trail_story_settings_option' );
+        $options = get_option( 'trail_story_options' );
 
         if (isset($options['trail_story_option'])) {
             $html .= '<input type="checkbox" id="trail_story_option"
@@ -212,7 +221,7 @@ class TrailStorySettings
     public function trail_story_setting_callback()
     {
         //Get plugin options
-        $options = get_option( 'trail_story_settings_option' );
+        $options = get_option( 'trail_story_settings' );
 
         if (isset($options['trail_story_option'])) {
             $html .= '<input type="checkbox" id="trail_story_settings"
