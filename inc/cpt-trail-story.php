@@ -1,20 +1,5 @@
 <?php
-
-/**
-* Pending approval post status
-*/
-/**add_action( 'init', 'pending_approval_post_status' );
-
-function pending_approval_post_status(){
-    register_post_status( 'pending-approval', array(
-        'label'                     => _x( 'Pending Approval', 'post' ),
-        'public'                    => true,
-        'exclude_from_search'       => false,
-        'show_in_admin_all_list'    => true,
-        'show_in_admin_status_list' => true,
-        'label_count'               => _n_noop( 'Unread <span class="count">(%s)</span>', 'Unread <span class="count">(%s)</span>' ),
-    ) );
-}*/
+defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 
 /*
 * Custom Post Type for Trail Story

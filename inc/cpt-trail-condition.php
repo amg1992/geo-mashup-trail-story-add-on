@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
+
 /*
 * Custom Post Type for Trail Condition
 */

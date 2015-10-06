@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 //Hey there guy.
 //include_once('woo-settings-tab.php');
 include_once('class-trail-story-settings.php');
