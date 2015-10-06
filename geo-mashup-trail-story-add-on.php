@@ -110,7 +110,6 @@ function trail_story_settings_link( $actions, $plugin_file )
 */
 add_filter( 'geo_mashup_load_user_editor', 'trail_story_filter_geo_mashup_load_user_editor' );
 
-
 function trail_story_filter_geo_mashup_load_user_editor( $enabled ) {
     global $user_id;
     if ( isset( $_GET['action'] ) && 'profile' === $_GET['action'] ) {
