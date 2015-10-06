@@ -28,7 +28,7 @@ function register_cpt_trail_story() {
         'taxonomies' => array( 'trail-story-category'), //, 'post_tag' ),
         'public' => true,
         'show_ui' => true,
-        'show_in_menu' => true,
+        'show_in_menu' => false,
         'show_in_nav_menus' => true,
         'show_in_admin_bar' => true,
         'menu_position' => 5,
