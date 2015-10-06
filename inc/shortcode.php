@@ -15,13 +15,13 @@ function trail_story_shortcode( $attributes ) {
 
 add_shortcode( 'frontend_trail_story_map', 'frontend_user_map_shortcode' );
 
-function frontend_trail_story_map( $attributes ) {
+function frontend_user_map_shortcode( $attributes ) {
     $attr = shortcode_atts( array(
         'foo' => 'something',
         'bar' => 'something else',
     ), $attributes );
 
-    return "Frontend Trail Story shortcode";
+    return GeoMashupUserUIManager::get_instance()->print_form();
 }
 
 
