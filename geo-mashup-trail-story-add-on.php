@@ -118,4 +118,3 @@ function trail_story_filter_geo_mashup_load_user_editor( $enabled ) {
     }
     return $enabled;
 }
-
