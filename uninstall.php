@@ -5,14 +5,22 @@ defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) 
     exit();
 
+
+/*
+* Getting options groups
+*/
 $option_name = 'trail_story_option';
 $setting_name = 'trail_story_settings';
 
-
+/*
+* Delete options
+*/
 delete_option( $option_name );
 delete_option( $setting_name );
 
-// For site options in multisite
+/*
+* For site options in multisite
+*/
 delete_site_option( $option_name );  
 delete_site_option( $setting_name );  
 
