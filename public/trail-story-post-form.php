@@ -8,6 +8,11 @@
 // Exit if accessed directly
 defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 
+/**
+* Shortcode for display frontend user trail story input
+*/
+add_shortcode( 'frontend_trail_story_map', 'trail_story_post_form' );
+
 function trail_story_post_form() {
     // Create form ?>
         <div class="trail-story-form-wrapper">
