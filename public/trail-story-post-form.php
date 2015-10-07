@@ -18,7 +18,10 @@ function trail_story_post_form() {
         <div class="trail-story-form-wrapper">
 
             <form id="new_post" name="new_post" method="post" action="" class="trail-story-form" enctype="multipart/form-data">
-         
+                <fieldset name="map">
+                    <?php GeoMashupUserUIManager::get_instance()->print_form(); ?>
+                </fieldset>
+
                 <fieldset name="name">
                     <label for="title"> <?php _e( 'Trail Story Title', 'geo-mashup-trail-story-add-on' ); ?></label>
                     <input type="text" id="title" value="" tabindex="5" name="title" />
@@ -39,7 +42,7 @@ function trail_story_post_form() {
                     input type="text" value="" tabindex="35" name="post_tags" id="post_tags" />
                 </fieldset>-->
 
-                <?php GeoMashupUserUIManager::get_instance()->print_form(); ?>
+                
              
                 <fieldset class="submit">
                     <input type="submit" value="Post Story" tabindex="40" id="submit" name="submit" />
