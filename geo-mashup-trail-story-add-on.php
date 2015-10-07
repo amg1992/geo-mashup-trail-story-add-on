@@ -114,7 +114,7 @@ function trail_story_filter_geo_mashup_load_user_editor( $enabled ) {
     global $user_id;
     if ( isset( $_GET['action'] ) && 'profile' === $_GET['action'] ) {
         $enabled = true;
-        $user_id = get_current_user_id();
+        //$user_id = get_current_user_id();
     }
-    return $enabled;
+    return true;
 }
