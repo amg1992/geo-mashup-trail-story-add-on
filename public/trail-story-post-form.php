@@ -85,7 +85,7 @@ function trail_story_save_post_form() {
         'post_type' => 'trail-story',
         'post_status' => 'pending'
     );
- 
+    var_dump($post_information);
     $post_id = wp_insert_post( $post_information );
 
     if ( $post_id ) {
