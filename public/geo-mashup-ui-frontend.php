@@ -500,6 +500,7 @@ class GeoMashupPostUIFrontend extends GeoMashupUIFrontend {
 	function print_form() {
 		global $post_ID;
 		global $user_ID;
+
     	include_once( GEO_MASHUP_DIR_PATH . '/edit-form.php' );
 		
 		/*$args = array('echo' => 0);
@@ -545,7 +546,6 @@ class GeoMashupPostUIFrontend extends GeoMashupUIFrontend {
 		} else {
 		?>
 <form method="post">
-
 	<fieldset name="name">
 	    <label for="quick_post_title" class="quick_post_label" style="">Title:</label> 
 	    <input type="text" name="quick_post_title" id="quick_post_title" style="" value="<Post title>" onblur="if(this.value=='') this.value='<Post title>'; return false;" onfocus="if(this.value=='<Post title>') this.value=''; return false;" />
