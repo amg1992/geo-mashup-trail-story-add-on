@@ -33,9 +33,7 @@ function trail_story_post_form() {
 
             <form id="new_post" name="new_post" method="post" action="" class="trail-story-form" enctype="multipart/form-data">
                 <fieldset name="map">
-                    <?php //GeoMashupUIManager::enqueue_form_client_items(); ?>
-                    <?php //GeoMashupUIManager::enqueue_jquery_styles(); ?>
-                    <?php GeoMashupUserUIFrontend::get_instance()->print_form(); ?>
+                    <?php GeoMashupUserUIManager::get_instance()->print_form(); ?>
                 </fieldset>
 
                 <fieldset name="name">
@@ -85,7 +83,7 @@ function trail_story_save_post_form() {
         'post_type' => 'trail-story',
         'post_status' => 'pending'
     );
-    var_dump($post_information);
+ 
     $post_id = wp_insert_post( $post_information );
 
     if ( $post_id ) {
