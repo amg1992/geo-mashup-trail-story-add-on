@@ -15,25 +15,32 @@ add_shortcode( 'frontend_trail_story_map', 'trail_story_post_form_handler' );
 
 function trail_story_post_form_handler(){
 
-    if ( isset( $_POST['trail_story_post_action'] ) && ( isset( $_POST['trail_story_add_post_nonce_field'] ) || wp_verify_nonce( $_POST['trail_story_add_post_nonce_field'], 'trail_story_post_nonce' ) ) ) {
+    include_once( TRAIL_STORY_DIR_PATH . '/public/geo-mashup-ui-frontend.php' );
+    // include_once( GEO_MASHUP_DIR_PATH . '/edit-form.php' );
+    GeoMashupPostUIFrontend::get_instance()->GeoMashupPostUIFrontend();
+
+    //if ( isset( $_POST['trail_story_post_action'] ) && ( isset( $_POST['trail_story_add_post_nonce_field'] ) || wp_verify_nonce( $_POST['trail_story_add_post_nonce_field'], 'trail_story_post_nonce' ) ) ) {
      
-        add_action( 'init', 'trail_story_save_post_form' );
+    //    add_action( 'init', 'trail_story_save_post_form' );
      
-    } else {
+    //} else {
 
         trail_story_post_form();
 
-    }
+    //}
 
 }
 
 function trail_story_post_form() {
-    // Create form ?>
+    // Create form 
+    GeoMashupPostUIFrontend::get_instance()->print_form();
+    /*ob_start(); ?>
+
         <div class="trail-story-form-wrapper">
 
             <form id="new_post" name="new_post" method="post" action="" class="trail-story-form" enctype="multipart/form-data">
                 <fieldset name="map">
-                    <?php GeoMashupUserUIManager::get_instance()->print_form(); ?>
+                    <?php GeoMashupPostUIFrontend::get_instance()->print_form(); ?>
                 </fieldset>
 
                 <fieldset name="name">
@@ -67,7 +74,9 @@ function trail_story_post_form() {
             </form>
 
         </div>
-<?php
+
+    <?php
+    ob_end_flush();*/
 }
 
 function trail_story_save_post_form() {
