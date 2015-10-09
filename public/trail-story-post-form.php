@@ -33,7 +33,9 @@ function trail_story_post_form() {
 
             <form id="new_post" name="new_post" method="post" action="" class="trail-story-form" enctype="multipart/form-data">
                 <fieldset name="map">
-                    <?php GeoMashupUserUIManager::get_instance()->print_form(); ?>
+                    <?php //GeoMashupUIManager::enqueue_form_client_items(); ?>
+                    <?php //GeoMashupUIManager::enqueue_jquery_styles(); ?>
+                    <?php GeoMashupUserUIFrontend::get_instance()->print_form(); ?>
                 </fieldset>
 
                 <fieldset name="name">
