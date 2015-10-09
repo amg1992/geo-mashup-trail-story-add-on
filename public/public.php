@@ -7,3 +7,4 @@
 defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 
 include_once('trail-story-post-form.php');
+include_once( 'geo-mashup-ui-frontend.php' );
