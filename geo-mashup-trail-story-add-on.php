@@ -16,7 +16,6 @@
 defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 
 define('TRAIL_STORY_DIR_PATH', dirname( __FILE__ ));
-var_dump(TRAIL_STORY_DIR_PATH);
 define('TRAIL_STORY_GEO_MASHUP_DIRECTORY', dirname( GEO_MASHUP_PLUGIN_NAME ) );
 define('TRAIL_STORY_URL_PATH', trim( plugin_dir_url( __FILE__ ), '/' ) );
 
