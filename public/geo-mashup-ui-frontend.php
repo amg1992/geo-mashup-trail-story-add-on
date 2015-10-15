@@ -508,15 +508,14 @@ class GeoMashupPostUIFrontend extends GeoMashupUIFrontend {
 		if ( $cats = wp_list_categories( $args ) ) {
 			print $cats[0];
 		}*/
-		
-		if ( !is_array( $_POST['quick_post_cat'] ) ) {
-			$_POST['quick_post_cat'] = array($_POST['quick_post_cat']);
-		}
+
+		$trail_story_post_category = !is_array( $_POST['quick_post_cat'] ) ? array( $_POST['quick_post_cat'] ) : $_POST['quick_post_cat'];
+		$trail_story_user_id = !is_null( $user_ID ) ? $user_ID : '';
 		
 		if ( $_POST['geo_mashup_add_location'] ) {
 			$post = array(
 				'post_author'		=> $user_ID, //The user ID number of the author.
-				'post_category'		=> $_POST['quick_post_cat'], //Add some categories.
+				'post_category'		=> $trail_story_post_category, //Add some categories.
 				'post_content'		=> $_POST['quick_post_content'], //The full text of the post.
 				'post_date'			=> date_i18n( 'Y-m-d H:i:s' ), //The time post was made.
 				//'post_date_gmt'	=> Y-m-d H:i:s, //The time post was made, in GMT.
@@ -527,13 +526,14 @@ class GeoMashupPostUIFrontend extends GeoMashupUIFrontend {
 			);
 			
 			// Insert the post into the database
-			wp_insert_post( $post );
+			$post_id = wp_insert_post( $post );
+			wp_set_post_terms($post_id, $trail_story_post_category,'trail-story-category',true);
 			
 		}
 		
 		//--- IF FORM - Ou algo que permita maior customização
-		//$filename[0] = TEMPLATEPATH . '/geo_mashup_ui_frontend_form.php';
-		//$filename[1] = GEO_MASHUP_DIR_PATH . '/geo_mashup_ui_frontend_form.php';
+		$filename[0] = TEMPLATEPATH . '/geo_mashup_ui_frontend_form.php';
+		$filename[1] = GEO_MASHUP_DIR_PATH . '/geo_mashup_ui_frontend_form.php';
 		
 		if ( file_exists($filename[0]) ) {
 			
@@ -561,7 +561,7 @@ class GeoMashupPostUIFrontend extends GeoMashupUIFrontend {
     <br />
     <fieldset name="category">
 	    <label for="quick_post_cat" class="quick_post_label" style="">Category:</label>
-	    <?php wp_dropdown_categories( 'tab_index=10&taxonomy=trail-story-category&hide_empty=0&echo=1&id=&quick_post_cat&class=quick_post_cat&name=quick_post_cat' ); ?>
+	    <?php wp_dropdown_categories( 'tab_index=10&taxonomy=trail-story-category&hide_empty=0&echo=1&id=&quick_post_cat&name=quick_post_cat' ); ?>
     </fieldset>
 
     <?php geo_mashup_edit_form( 'post', $post_ID, get_class( $this ) ); ?>
