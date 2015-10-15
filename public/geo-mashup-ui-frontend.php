@@ -515,22 +515,23 @@ class GeoMashupPostUIFrontend extends GeoMashupUIFrontend {
 		if ( $_POST['geo_mashup_add_location'] ) {
 			$post = array(
 				'post_author'		=> $user_ID, //The user ID number of the author.
-				'post_category'		=> $trail_story_post_category, //Add some categories.
+				//'post_category'		=> $trail_story_post_category, //Add some categories. Apparently doesn't work
 				'post_content'		=> $_POST['quick_post_content'], //The full text of the post.
 				'post_date'			=> date_i18n( 'Y-m-d H:i:s' ), //The time post was made.
 				//'post_date_gmt'	=> Y-m-d H:i:s, //The time post was made, in GMT.
 				'post_status' 		=> 'pending', //Set the status of the new post. Pode ser acertada via Admin
 				'post_title'		=> $_POST['quick_post_title'], //The title of your post.
 				'post_type'			=> 'trail-story', //Sometimes you want to post a page.
-				//'tags_input'		=> [  ] //For tags.
+				//'tags_input'		=> [  ], //For tags.
+				'tax_input'		    => array( 'trail-story-category' => $trail_story_post_category ), //For taxonomies.
 			);
 			
 			// Insert the post into the database
 			$post_id = wp_insert_post( $post );
-			wp_set_post_terms($post_id, $trail_story_post_category,'trail-story-category',true);
 			
 		}
 		
+			//var_dump($post62);
 		//--- IF FORM - Ou algo que permita maior customização
 		$filename[0] = TEMPLATEPATH . '/geo_mashup_ui_frontend_form.php';
 		$filename[1] = GEO_MASHUP_DIR_PATH . '/geo_mashup_ui_frontend_form.php';
