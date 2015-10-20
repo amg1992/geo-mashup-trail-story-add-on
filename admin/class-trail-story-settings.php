@@ -199,7 +199,7 @@ class TrailStorySettings implements iTrailStorySettings
      */
     public function print_option_info()
     {
-        print '<br/><p style="font-size:14px; margin:0 25% 0 0;"><strong>Developed at <a href="http://orionweb.net" target="_blank">Orion Group</a> LLC by '.
+        print '<br/><p style="font-size:14px; margin:0 25% 0 0;"><strong>Developed at <a href="http://www.orionweb.net" target="_blank">Orion Group</a> LLC by '.
          '<a href="http://andrewmgunn.com" target="_blank">Andrew Gunn</a>, Ryan Van Ess, Jon Valcq, and Josh Selk</strong>';
     }
 
@@ -228,6 +228,62 @@ class TrailStorySettings implements iTrailStorySettings
         }
 
         echo $html;
+
+        global $geo_mashup_options;
+
+        // Create marker and color arrays
+        $colorNames = Array(
+            'aqua' => '#00ffff',
+            'black' => '#000000',
+            'blue' => '#0000ff',
+            'fuchsia' => '#ff00ff',
+            'gray' => '#808080',
+            'green' => '#008000',
+            'lime' => '#00ff00',
+            'maroon' => '#800000',
+            'navy' => '#000080',
+            'olive' => '#808000',
+            'orange' => '#ffa500',
+            'purple' => '#800080',
+            'red' => '#ff0000',
+            'silver' => '#c0c0c0',
+            'teal' => '#008080',
+            'white' => '#ffffff',
+            'yellow' => '#ffff00'
+        );
+         $include_taxonomies = $geo_mashup_options->get( 'overall', 'include_taxonomies' ); ?>
+                <table>
+                    <tr>
+                        <th><?php _e( 'Post Types', 'geo-mashup-trail-story-add-on' ); ?></th>
+                        <th><?php _e('Color', 'geo-mashup-trail-story-add-on'); ?></th>
+                        <th><?php _e('Show Connecting Line Until Zoom Level (0-20 or none)','geo-mashup-trail-story-add-on'); ?></th>
+                    </tr>
+                    <?php foreach( get_post_types( array( 'show_ui' => true ), 'objects' ) as $post_type ) : ?>
+                        <?php if ( in_array( $post_type->name, $geo_mashup_options->get( 'overall', 'located_post_types' ) ) ) { ?>
+                            <tr>
+                                <td><?php echo esc_html( $post_type->labels->name ); ?></td>
+                                <td>
+                                    <select id="<?php echo esc_attr( $post_type->rewrite['slug'] ); ?>_color" 
+                                        name="global_map[term_options][<?php echo $include_taxonomy; ?>][color][<?php echo esc_attr( $term->slug ); ?>]">
+                                    <?php foreach($colorNames as $name => $rgb) : ?>
+                                        <option value="<?php echo esc_attr( $name ); ?>"<?php
+                                            if ( isset( $taxonomy_options['color'][$term->slug] ) and $taxonomy_options['color'][$term->slug] == $name ) {
+                                                echo ' selected="selected"';
+                                            }
+                                        ?> style="background-color:<?php echo esc_attr( $rgb ); ?>;"><?php echo esc_html( $name ); ?></option>
+                                    <?php endforeach; // color name ?>  
+                                    </select>
+                        </td><td>
+                        <input id="<?php echo $include_taxonomy; ?>_line_zoom_<?php 
+                            echo esc_attr( $term->slug ); ?>" name="global_map[term_options][<?php 
+                            echo $include_taxonomy; ?>][line_zoom][<?php
+                            echo esc_attr( $term->slug ); ?>]" value="<?php 
+                            if ( isset( $taxonomy_options['line_zoom'][$term->slug] ) )
+                                echo esc_attr( $taxonomy_options['line_zoom'][$term->slug] );
+                            ?>" type="text" size="2" maxlength="2" /></td></tr>
+                        <?php } ?>
+                    <?php endforeach; // taxonomy term ?>
+                </table><?php
     }
 
     /**

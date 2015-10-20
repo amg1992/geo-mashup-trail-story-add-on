@@ -1,11 +1,31 @@
 <?php
-/** 
- * Geo Mashup "core" implementation of location management user interfaces.
- *
- * Theoretically, everything done here could be done in a separate plugin.
- *
- * @package GeoMashup
- */
+/**
+ * Creates the Front End form for users to create a Tail Story post
+ * 
+ * @package Geo Mashup Trail Story Add-On
+*/
+
+// Exit if accessed directly
+defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
+
+/**
+* Shortcode for display frontend user trail story input
+*/
+add_shortcode( 'frontend_trail_story_map', 'trail_story_post_form_handler' );
+
+function trail_story_post_form_handler(){
+
+    GeoMashupPostUIFrontend::get_instance()->GeoMashupPostUIFrontend();
+
+    trail_story_post_form();
+
+}
+
+function trail_story_post_form() {
+    // Create form 
+    GeoMashupPostUIFrontend::get_instance()->print_form();
+
+}
 
 /**
  * A base class for managing user interfaces for collecting and storing location.
@@ -523,12 +543,12 @@ class GeoMashupPostUIFrontend extends GeoMashupUIFrontend {
 				'post_title'		=> $_POST['quick_post_title'], //The title of your post.
 				'post_type'			=> 'trail-story', //Sometimes you want to post a page.
 				//'tags_input'		=> [  ], //For tags.
-				'tax_input'		    => array( 'trail-story-category' => $trail_story_post_category ), //For taxonomies.
+				//'tax_input'		    => array( 'trail-story-category' => $trail_story_post_category ), //For taxonomies.
 			);
 			
 			// Insert the post into the database
 			$post_id = wp_insert_post( $post );
-			
+
 		}
 		
 			//var_dump($post62);
@@ -560,10 +580,10 @@ class GeoMashupPostUIFrontend extends GeoMashupUIFrontend {
     <!--<input type='button' id="quick_post_load" style="" value="Visual Editor" title="Visual Editor" /> -->
     
     <br />
-    <fieldset name="category">
+    <!--<fieldset name="category">
 	    <label for="quick_post_cat" class="quick_post_label" style="">Category:</label>
-	    <?php wp_dropdown_categories( 'tab_index=10&taxonomy=trail-story-category&hide_empty=0&echo=1&id=&quick_post_cat&name=quick_post_cat' ); ?>
-    </fieldset>
+	    <?php // wp_dropdown_categories( 'tab_index=10&taxonomy=trail-story-category&hide_empty=0&echo=1&id=&quick_post_cat&name=quick_post_cat' ); ?>
+    </fieldset> -->
 
     <?php geo_mashup_edit_form( 'post', $post_ID, get_class( $this ) ); ?>
     
