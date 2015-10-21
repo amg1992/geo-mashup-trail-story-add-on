@@ -3,7 +3,8 @@
     // Use a special icon in case the custom 'complete' var is set to 1
     if ( object.my_complete == 1 ) {
 
-        object.icon.image = properties.template_url_path + '/member-icons/conversation-map-icon.png';
+        //object.icon.image = properties.template_url_path + '/member-icons/conversation-map-icon.png';
+        object.icon.image = object.link_to_image_icon;
         object.icon.iconSize = [ 32, 37 ];
 
     } else if ( object.my_complete == 2 ) {

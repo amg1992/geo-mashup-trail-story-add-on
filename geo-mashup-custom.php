@@ -148,6 +148,7 @@ function trail_story_locations_json_filter( $json_properties, $queried_object ) 
 
         case 'trail-story':
             $json_properties['my_complete'] = 1;
+            $json_properties['link_to_image_icon'] = TRAIL_STORY_URL_PATH . "/assets/icon-20x20.png";
             return $json_properties;
             break;
 

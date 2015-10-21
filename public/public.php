@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 include_once('trail-story-frontend-form.php');
 //include_once('geo-mashup-custom.php');
 
-add_action( 'init', 'register_admin_trail_story_scripts' );
+add_action( 'init', 'trail_story_enqueue_front_end_scripts' );
 
 function trail_story_enqueue_front_end_scripts(){
 
