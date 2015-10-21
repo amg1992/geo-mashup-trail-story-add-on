@@ -123,42 +123,24 @@ function trail_story_locations_json_filter( $json_properties, $queried_object ) 
     $post_id = $queried_object->object_id;
 
     $post_type = get_post_type( $post_id );
-/*
-    if ( $post_type == 'trail-story' ) {
-
-        $json_properties['my_complete'] = 1;
-
-    } else if ( $post_type == 'trail-condition' ) {
-
-        $json_properties['my_complete'] = 2;
-
-    } else if ( $post_type == 'itinerary' ) {
-
-        $json_properties['my_complete'] = 3;
-
-    } else {
-
-        $json_properties[''];
-
-    }
-
-   return $json_properties;*/
 
     switch ( $post_type ) {
 
         case 'trail-story':
             $json_properties['my_complete'] = 1;
-            $json_properties['link_to_image_icon'] = TRAIL_STORY_URL_PATH . "/assets/icon-20x20.png";
+            $json_properties['link_to_image_icon'] = TRAIL_STORY_URL_PATH . "/assets/conversation-map-icon.png";
             return $json_properties;
             break;
 
         case 'trail-condition':
             $json_properties['my_complete'] = 2;
+            $json_properties['link_to_image_icon'] = TRAIL_STORY_URL_PATH . "/assets/cloudysunny.png";
             return $json_properties;
             break;
 
         case 'itinerary':
             $json_properties['my_complete'] = 3;
+            $json_properties['link_to_image_icon'] = TRAIL_STORY_URL_PATH . "/assets/administration.png";
             return $json_properties;
             break;
 

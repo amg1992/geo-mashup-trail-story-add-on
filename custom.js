@@ -1,80 +1,10 @@
     GeoMashup.addAction( 'objectIcon', function( properties, object ) {
 
     // Use a special icon in case the custom 'complete' var is set to 1
-    if ( object.my_complete == 1 ) {
+    if ( object.link_to_image_icon != null  ) {
 
         //object.icon.image = properties.template_url_path + '/member-icons/conversation-map-icon.png';
         object.icon.image = object.link_to_image_icon;
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 2 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/cloudysunny.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 3 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/administration.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 4 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/columbia.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 5 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/corpus.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 6 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/interchurch.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 7 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/ihouse.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 8 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/jts.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 9 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/msm.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 10 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/riverside.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 11 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/sthildas.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 12 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/stlukes.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 13 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/teachers.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 14 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/ulysses.png';
-        object.icon.iconSize = [ 32, 37 ];
-
-    } else if ( object.my_complete == 15 ) {
-
-        object.icon.image = properties.template_url_path + '/member-icons/uts.png';
         object.icon.iconSize = [ 32, 37 ];
 
     } else {
