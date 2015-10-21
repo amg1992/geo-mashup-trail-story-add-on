@@ -1,20 +1,19 @@
-GeoMashup.addAction( 'objectIcon', function( properties, object ) {
+    GeoMashup.addAction( 'objectIcon', function( properties, object ) {
 
     // Use a special icon in case the custom 'complete' var is set to 1
-    console.log(object.my_complete);
     if ( object.my_complete == 1 ) {
 
-        object.icon.image = properties.template_url_path + '/member-icons/bank.png';
+        object.icon.image = properties.template_url_path + '/member-icons/conversation-map-icon.png';
         object.icon.iconSize = [ 32, 37 ];
 
     } else if ( object.my_complete == 2 ) {
 
-        object.icon.image = properties.template_url_path + '/member-icons/barnard.png';
+        object.icon.image = properties.template_url_path + '/member-icons/cloudysunny.png';
         object.icon.iconSize = [ 32, 37 ];
 
     } else if ( object.my_complete == 3 ) {
 
-        object.icon.image = properties.template_url_path + '/member-icons/cathedral.png';
+        object.icon.image = properties.template_url_path + '/member-icons/administration.png';
         object.icon.iconSize = [ 32, 37 ];
 
     } else if ( object.my_complete == 4 ) {
@@ -85,7 +84,7 @@ GeoMashup.addAction( 'objectIcon', function( properties, object ) {
     }
 });
 
-GeoMashup.addAction( 'loadedMap', function( properties, map ) {
+/* GeoMashup.addAction( 'loadedMap', function( properties, map ) {
 
     var google_map = map.getMap();
 
@@ -193,7 +192,7 @@ GeoMashup.addAction( 'loadedMap', function( properties, map ) {
 
     google_map.setMapTypeId( 'yellow' );
 
-});
+}); */
 
 //Add support for Google Earth plug-in
 

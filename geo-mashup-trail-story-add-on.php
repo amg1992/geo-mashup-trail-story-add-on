@@ -16,6 +16,7 @@
 defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 
 define('TRAIL_STORY_DIR_PATH', dirname( __FILE__ ));
+define('TRAIL_STORY_PLUGIN_FILE', plugin_basename( __FILE__ ) );
 define('TRAIL_STORY_GEO_MASHUP_DIRECTORY', dirname( GEO_MASHUP_PLUGIN_NAME ) );
 define('TRAIL_STORY_URL_PATH', trim( plugin_dir_url( __FILE__ ), '/' ) );
 
@@ -29,7 +30,7 @@ include_once('inc/script-styles.php');
 include_once('inc/cpt-itinerary.php');
 include_once('inc/cpt-trail-story.php');
 include_once('inc/cpt-trail-condition.php');
-
+include_once('geo-mashup-custom.php');
 
 /**
 * Flushing permalinks for CPTs on DEACTIVATE
