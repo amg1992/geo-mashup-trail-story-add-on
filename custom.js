@@ -1,21 +1,24 @@
-    GeoMashup.addAction( 'objectIcon', function( properties, object ) {
+GeoMashup.addAction( 'objectIcon', function( properties, object ) {
 
     // Use a special icon in case the custom 'complete' var is set to 1
-    if ( object.link_to_image_icon != null  ) {
+    if ( object.link_to_image_icon != null && typeof object.link_to_image_icon !== 'undefined' ) {
 
-        //object.icon.image = properties.template_url_path + '/member-icons/conversation-map-icon.png';
         object.icon.image = object.link_to_image_icon;
         object.icon.iconSize = [ 32, 37 ];
 
     } else {
-
+        
         object.icon.image = properties.template_url_path + '/map-icons/low.png';
         object.icon.iconSize = [ 35, 47 ];
 
     }
 });
 
-/* GeoMashup.addAction( 'loadedMap', function( properties, map ) {
+ 
+/*
+** Customizes the look of map
+ */
+/*GeoMashup.addAction( 'loadedMap', function( properties, map ) {
 
     var google_map = map.getMap();
 
@@ -124,21 +127,3 @@
     google_map.setMapTypeId( 'yellow' );
 
 }); */
-
-//Add support for Google Earth plug-in
-
-//mashup.map.addMapType(G_SATELLITE_3D_MAP);
-
-//mashup.map.addControl(new GHierarchicalMapTypeControl());
-
-//Street View for MH
-
-//if (GeoMashup.opts.load_svMH && confirm('Take a virtual street tour of Morningside Heights (Google Street View requires the Flash plugin)')) {
-
-    //var streetView = new GLatLng(40.697488,-73.979681);
-
-    //panoramaOptions = { latlng:streetView };
-
-    //var svMH = new GStreetviewPanorama(document.getElementById("geoMashup"), panoramaOptions);
-
-//}

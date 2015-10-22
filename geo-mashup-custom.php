@@ -123,23 +123,43 @@ function trail_story_locations_json_filter( $json_properties, $queried_object ) 
     $post_id = $queried_object->object_id;
 
     $post_type = get_post_type( $post_id );
+    /*
+    * TO DO
+    * Dynamically add custom post types based on what custom post types are being used
+    * Potentially use this methodology
+    * <?php foreach( get_post_types( array( 'show_ui' => true ), 'objects' ) as $post_type ) : ?>
+    
+        <?php if ( in_array( $post_type->name, $geo_mashup_options->get( 'overall', 'located_post_types' ) ) ) { ?>
+
+            //if get_option returns false, use default image
+
+            $json_properties['link_to_image_icon'] = get_option( 'trail_story_icon_'. $post_type->name );
+            return $json_properties;
+
+        <?php } else { 
+            
+            $json_properties[''];
+            return $json_properties;
+
+        }
+
+    <?php endforeach; // post type that matches GeoMashups Selected post types?>
+
+    */
 
     switch ( $post_type ) {
 
         case 'trail-story':
-            $json_properties['my_complete'] = 1;
             $json_properties['link_to_image_icon'] = TRAIL_STORY_URL_PATH . "/assets/conversation-map-icon.png";
             return $json_properties;
             break;
 
         case 'trail-condition':
-            $json_properties['my_complete'] = 2;
             $json_properties['link_to_image_icon'] = TRAIL_STORY_URL_PATH . "/assets/cloudysunny.png";
             return $json_properties;
             break;
 
         case 'itinerary':
-            $json_properties['my_complete'] = 3;
             $json_properties['link_to_image_icon'] = TRAIL_STORY_URL_PATH . "/assets/administration.png";
             return $json_properties;
             break;

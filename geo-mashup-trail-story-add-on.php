@@ -116,8 +116,11 @@ function trail_story_settings_link( $actions, $plugin_file )
 */
 add_filter( 'geo_mashup_load_user_editor', 'trail_story_filter_geo_mashup_load_user_editor' );
 
-function trail_story_filter_geo_mashup_load_user_editor( ) {
+function trail_story_filter_geo_mashup_load_user_editor( $enabled ) {
+
+    global $post;
     
-    return true;
+    $enabled = has_shortcode( $post->post_content, 'frontend_trail_story_map') ? true : false;
+    return $enabled;
     
 }
