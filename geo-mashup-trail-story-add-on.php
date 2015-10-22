@@ -30,6 +30,7 @@ include_once('inc/script-styles.php');
 include_once('inc/cpt-itinerary.php');
 include_once('inc/cpt-trail-story.php');
 include_once('inc/cpt-trail-condition.php');
+include_once('lib/require-email-for-download.php');
 include_once('geo-mashup-custom.php');
 
 /**
