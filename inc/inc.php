@@ -4,7 +4,7 @@
 */
 defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
 
-function include_admin_directory() {
+function include_inc_directory() {
 
 	$count = 0;
 	$iterator = new RecursiveDirectoryIterator(dirname(__FILE__));
