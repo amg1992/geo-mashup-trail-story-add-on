@@ -45,16 +45,16 @@ class TrailStorySettings implements iTrailStorySettings
             'manage_options',
             'trail-story',
             array( $this, 'create_trail_story_menu_page' ),
-            plugins_url('geo-mashup-trail-story-add-on/assets/icon-20x20.png'), 100
+            plugins_url('geo-mashup-trail-story-add-on/assets/icon-20x20.png'), 80
         );
 
-        add_submenu_page(
+        /*add_submenu_page(
             'trail-story',
             'Itineraries',
             'Itineraries',
             'manage_options',
             'edit.php?post_type=itinerary'
-        );
+        );*/
 
         add_submenu_page(
             'trail-story',

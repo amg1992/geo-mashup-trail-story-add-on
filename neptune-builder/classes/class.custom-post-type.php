@@ -75,7 +75,7 @@ if( ! class_exists( 'NP_CPT' ) ) {
 		'singular_name'      => $post_type,
 		'menu_name'          => $post_type,
 		'name_admin_bar'     => $post_type,
-		'add_new'            => 'Add New',
+		'add_new'            => 'Add New '.$post_type,
 		'add_new_item'       => 'Add New ' . $post_type,
 		'new_item'           => 'New ' . $post_type,
 		'edit_item'          => 'Edit ' . $post_type,
@@ -103,7 +103,8 @@ if( ! class_exists( 'NP_CPT' ) ) {
         'query_var'          => true,
         'can_export'         => true,
 		'hierarchical'       => false,
-		'menu_position'      => 100,
+		'menu_position'      => 5,
+        'rewrite'            => true,
         'menu_icon'          => 'dashicons-clipboard',
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'revisions', 'comments' ),
             );

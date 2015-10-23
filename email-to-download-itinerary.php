@@ -238,7 +238,7 @@ Download here: {{download_link}}
              */
             $post_type = apply_filters(
                                     'ed_post_type',
-                                    'trail_intinerary'
+                                    'trail-itinerary'
                                 );
             
             $labels = array(
@@ -282,7 +282,7 @@ Download here: {{download_link}}
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => true,
-		'menu_position'      => null,
+		'menu_position'      => 90,
 		'supports'           => array( 'title', 'editor' )
             );
 
@@ -307,7 +307,7 @@ Download here: {{download_link}}
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => true,
-        'menu_position'      => null,
+        'menu_position'      => 90,
         'supports'           => array( 'title', 'editor' )
             );
             
@@ -605,7 +605,7 @@ Download here: {{download_link}}
          */
         public function ed_settings_menu() {
             add_submenu_page( 'edit.php?post_type=' . $this->ed->get_post_type(), __( 'Email to Download Settings', 'email-to-download-intinerary' ), __( 'Settings', 'email-to-download-intinerary' ), 'manage_options', 'email-to-download-intinerary-settings', array( &$this, 'email_to_download_settings' ) );
-            add_submenu_page( 'edit.php?post_type=' . $this->ed->get_post_type(), __( 'Subscribers', 'email-to-download-intinerary' ), __( 'Subscribers', 'email-to-download-intinerary' ), 'manage_options', 'email-to-download-intinerary-Subscribers', array( &$this, 'email_to_download_Subscribers' ) );
+            add_submenu_page( 'edit.php?post_type=' . $this->ed->get_post_type(), __( 'View Leads', 'email-to-download-intinerary' ), __( 'View Leads', 'email-to-download-intinerary' ), 'manage_options', 'email-to-download-intinerary-Subscribers', array( &$this, 'email_to_download_Subscribers' ) );
         }
         
         /**

@@ -28,7 +28,7 @@ include_once('admin/admin.php');
 include_once('public/public.php');
 include_once('inc/shortcode.php');
 include_once('inc/script-styles.php');
-include_once('inc/cpt-itinerary.php');
+//include_once('inc/cpt-itinerary.php');
 include_once('inc/cpt-trail-story.php');
 include_once('inc/cpt-trail-condition.php');
 include_once('lib/require-email-for-download.php');
@@ -45,7 +45,7 @@ register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
 register_activation_hook( __FILE__, 'trail_story_flush_rewrites' );
 
 function trail_story_flush_rewrites() {
-	register_cpt_itinerary();
+	//register_cpt_itinerary();
 	register_cpt_trail_story();
 	register_cpt_trail_condition();
 	flush_rewrite_rules();
