@@ -1,25 +1,15 @@
 <?php
-/**
-*
-*/
 defined( 'ABSPATH' ) or die( 'Plugin file cannot be accessed directly.' );
+//Hey there guy.
+//include_once('woo-settings-tab.php');
+include_once('class-trail-story-settings.php');
 
-function include_admin_directory() {
 
-	$count = 0;
-	$iterator = new RecursiveDirectoryIterator(dirname(__FILE__));
-	
-	foreach (new RecursiveIteratorIterator($iterator) as $filename => $file) {
+add_action( 'init', 'register_admin_trail_story_scripts' );
 
-		if ( (__FILE__ !== $filename) && ( strpos( $filename, 'php' ) >= 1 ) ) {
-
-			$count++;
-			include_once($filename);
-
-		} //init
-
-	} //forreach
-	
-	echo 'echo '.$count;
-
-} //includes scripts
+function register_admin_trail_story_scripts() {
+	wp_register_script( 'admin_trail_story_js', plugins_url('geo-mashup-trail-story-add-on/inc/admin-trail-story.js'), array('jquery'));
+	wp_register_style( 'admin_trail_story_css', plugins_url('geo-mashup-trail-story-add-on/inc/admin-trail-story.css'));
+	wp_enqueue_script( 'admin_trail_story_js' );
+	wp_enqueue_style( 'admin_trail_story_css' );
+}

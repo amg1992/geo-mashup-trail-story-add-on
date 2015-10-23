@@ -25,7 +25,13 @@ define('TRAIL_STORY_URL_PATH', trim( plugin_dir_url( __FILE__ ), '/' ) );
 */
 include_once('admin/admin.php');
 include_once('public/public.php');
-include_once('inc/inc.php');
+include_once('inc/shortcode.php');
+include_once('inc/script-styles.php');
+include_once('inc/cpt-itinerary.php');
+include_once('inc/cpt-trail-story.php');
+include_once('inc/cpt-trail-condition.php');
+include_once('lib/require-email-for-download.php');
+include_once('geo-mashup-custom.php');
 
 /**
 * Flushing permalinks for CPTs on DEACTIVATE
@@ -47,23 +53,13 @@ function trail_story_flush_rewrites() {
 /**
 * Register and enqueue jQuery files to run on frontend, enqueue on admin_init
 */
-add_action( 'wp_enqueue_scripts', 'register_trail_story_scripts' );
-
-function register_trail_story_scripts() {
-	wp_register_script( 'trailstory_js', plugins_url('js/trail-story.js', __FILE__), array('jquery'));
-	wp_register_style( 'trailstory_css', plugins_url('css/trail-story.css', __FILE__));
-}
-
-/**
-* Register and enqueue jQuery files to run on frontend, enqueue on admin_init
-*/
 add_action( 'init', 'register_trail_story_scripts' );
 
-function register_trail_story_admin_scripts() {
-	wp_register_script( 'trailstory_admin_js', plugins_url('js/trail-story.js', __FILE__), array('jquery'));
-	wp_register_style( 'trailstory_admin_css', plugins_url('css/trail-story.css', __FILE__));
-	wp_enqueue_script( 'trailstory_admin_js' );
-	wp_enqueue_style( 'trailstory_admin_css' );
+function register_trail_story_scripts() {
+	wp_register_script( 'trailstory_js', plugins_url('inc/trail-story.js', __FILE__), array('jquery'));
+	wp_register_style( 'trailstory_css', plugins_url('inc/trail-story.css', __FILE__));
+	wp_enqueue_script( 'trailstory_js' );
+	wp_enqueue_style( 'trailstory_css' );
 }
 
 /**
