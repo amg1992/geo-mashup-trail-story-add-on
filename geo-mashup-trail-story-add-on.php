@@ -23,6 +23,7 @@ define('TRAIL_STORY_URL_PATH', trim( plugin_dir_url( __FILE__ ), '/' ) );
 /**
 * Including files in other directories
 */
+include_once('email-to-download-itinerary.php');
 include_once('admin/admin.php');
 include_once('public/public.php');
 include_once('inc/shortcode.php');
